@@ -1,0 +1,8 @@
+PUT http://10.141.141.10:8080/v2/apps/weather-service
+
+Content-Type = application/json
+Accept = application/json
+
+{  
+    "instances": 2
+}

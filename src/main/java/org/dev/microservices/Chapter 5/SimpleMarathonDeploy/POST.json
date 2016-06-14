@@ -1,0 +1,43 @@
+POST http://10.141.141.10:8080/v2/apps
+
+Content-Type = application/json
+Accept = application/json
+
+{  
+    "id": "weather-service",
+    "container": {  
+        "type": "DOCKER",
+        "docker": {  
+            "image": "rickfast/weather-service:1.0",
+            "network": "BRIDGE",
+            "portMappings": [  
+                {  
+                    "containerPort": 8080,
+                    "hostPort": 0,
+                    "servicePort": 0,
+                    "protocol": "tcp"
+                }
+            ]
+        }
+    },
+    "instances": 2,
+    "cpus": 0.125,
+    "backoff_factor": 1.15,
+    "backoff_seconds": 1,
+    "mem": 128,
+    "disk": 0,
+    "healthChecks": [  
+        {  
+            "path": "/health",
+            "protocol": "HTTP",
+            "portIndex": 0,
+            "gracePeriodSeconds": 90,
+            "intervalSeconds": 10,
+            "timeoutSeconds": 20,
+            "maxConsecutiveFailures": 3
+        }
+    ],
+    "env": {  
+
+    }
+}

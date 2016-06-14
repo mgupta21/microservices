@@ -1,0 +1,16 @@
+group 'com.oreilly'
+
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+    maven {
+        url 'http://dl.bintray.com/rickfast/microservice-chassis/'
+    }
+}
+
+dependencies {
+    compile 'com.oreilly.microservices:microservice-chassis:1.0'
+    compile 'org.elasticsearch:elasticsearch:1.7.3'
+    compile 'com.thedeanda:lorem:1.2'
+}

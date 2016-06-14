@@ -1,0 +1,16 @@
+group 'com.oreilly'
+
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+    maven {
+        url 'http://dl.bintray.com/rickfast/microservice-chassis/'
+    }
+}
+
+dependencies {
+    compile 'com.oreilly.microservices:microservice-chassis:1.0'
+    compile 'org.jsr107.ri:cache-annotations-ri-guice:1.0.0'
+    compile 'org.ehcache:jcache:1.0.0'
+}
